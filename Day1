@@ -1,0 +1,10 @@
+a=list(map(int,input().split()))|
+k=int(input())
+for i in a:
+for j in a:
+if (i+j)==k:
+res='true'
+break
+else:
+res='false'
+print(res)
