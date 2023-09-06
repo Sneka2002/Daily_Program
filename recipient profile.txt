@@ -224,3 +224,39 @@ const User = () => {
 };
 
 export default User;
+
+Home.jsx
+
+import React from "react";
+import avatar from "./round-avatar.jpeg";
+import User from "./User";
+import './App.css'
+const Home = () => {
+  return (
+    <div className="user-profile">
+      <div className="nav-bar">
+        <div className="nav-logo">
+          <h1>MOTHER'S GIFT</h1>
+        </div>
+        <div className="nav-links">
+          <a href="/">Home</a>
+          <a href="/">About Us</a>
+          <a href="/">Help</a>
+        </div>
+        <div className="loggedin-user">
+          <img src={avatar} alt="user-profile" height={50} width={50}></img>
+          <p>Recepient UserName</p>
+        </div>
+      </div>
+      <div className="profile-search">
+        <input type="text" placeholder="Search" className="search-bar" />
+      </div>
+      <div className="users">
+        <User></User>
+        <User></User>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
