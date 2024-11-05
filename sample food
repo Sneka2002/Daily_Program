@@ -1,0 +1,187 @@
+import java.util.*;
+
+public class Food{
+    private List<User> usersList =new ArrayList<>();
+    private List<Restaurant> restaurantList= new ArrayList<>();
+    private List<Menuitem> menuitemList=new ArrayList<>();
+    private List<Order> orderList=new ArrayList<>();
+
+    public static void main(String[] args){
+        Food food=new Food();
+        food.initializeSampleData();
+        food.run();
+    }
+    private void initializeSampleData(){
+        usersList.add(new User(1,"sneka","sneka231@gmail.com","Admin",987653210));
+        usersList.add(new User(2,"sowmi","sowmi76@gmail.com","customer",879056432));
+
+        restaurantList.add(new Restaurant(3,"chola","ramapuram","veg"));
+        restaurantList.add(new Restaurant(4,"thalappakatti","porur","Non-veg"));
+
+        menuitemList.add(new Menuitem(6,"Biriyani",150));
+        menuitemList.add(new Menuitem(7,"pepper-chicken",200));
+
+        orderList.add(new Order(8,"chola","Biriyani",150));
+        orderList.add(new Order(9,"thalappakatti","pepper-chicken",200));
+    }
+}
+
+public class User{
+    private int UserId;
+    private String UserName;
+    private String Email;
+    private String UserRole;
+    private double Phone;
+    public int getUserId() {
+        return UserId;
+    }
+    public void setUserId(int userId) {
+        UserId = userId;
+    }
+    public String getUserName() {
+        return UserName;
+    }
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+    public String getEmail() {
+        return Email;
+    }
+    public void setEmail(String email) {
+        Email = email;
+    }
+    public String getUserRole() {
+        return UserRole;
+    }
+    public void setUserRole(String userRole) {
+        UserRole = userRole;
+    }
+    public double getPhone() {
+        return Phone;
+    }
+    public void setPhone(double phone) {
+        Phone = phone;
+    }
+    public User(int userId, String userName, String email, String userRole, double phone) {
+        UserId = userId;
+        UserName = userName;
+        Email = email;
+        UserRole = userRole;
+        Phone = phone;
+    }
+    @Override
+    public String toString() {
+        return "User [UserId=" + UserId + ", UserName=" + UserName + ", Email=" + Email + ", UserRole=" + UserRole
+                + ", Phone=" + Phone + "]";
+    }
+    
+}
+public class Restaurant{
+    private int ResId;
+    private String ResName;
+    private String Location;
+    private String ResType;
+    public int getResId() {
+        return ResId;
+    }
+    public void setResId(int resId) {
+        ResId = resId;
+    }
+    public String getResName() {
+        return ResName;
+    }
+    public void setResName(String resName) {
+        ResName = resName;
+    }
+    public String getLocation() {
+        return Location;
+    }
+    public void setLocation(String location) {
+        Location = location;
+    }
+    public String getResType() {
+        return ResType;
+    }
+    public void setResType(String resType) {
+        ResType = resType;
+    }
+    public Restaurant(int resId, String resName, String location, String resType) {
+        ResId = resId;
+        ResName = resName;
+        Location = location;
+        ResType = resType;
+    }
+    @Override
+    public String toString() {
+        return "Restaurant [ResId=" + ResId + ", ResName=" + ResName + ", Location=" + Location + ", ResType=" + ResType
+                + "]";
+    }
+    
+}
+public class Menuitem{
+    private int MenuItemId;
+    private String MenuName;
+    private int Price;
+    public int getMenuItemId() {
+        return MenuItemId;
+    }
+    public void setMenuItemId(int menuItemId) {
+        MenuItemId = menuItemId;
+    }
+    public String getMenuName() {
+        return MenuName;
+    }
+    public void setMenuName(String menuName) {
+        MenuName = menuName;
+    }
+    public int getPrice() {
+        return Price;
+    }
+    public void setPrice(int price) {
+        Price = price;
+    }
+    public Menuitem(int menuItemId, String menuName, int price) {
+        MenuItemId = menuItemId;
+        MenuName = menuName;
+        Price = price;
+    }
+
+
+}
+public class Order{
+    private int OrderId;
+    private String HotelName;
+    private String ItemName;
+    private String Price;
+    public int getOrderId() {
+        return OrderId;
+    }
+    public void setOrderId(int orderId) {
+        OrderId = orderId;
+    }
+    public String getHotelName() {
+        return HotelName;
+    }
+    public void setHotelName(String hotelName) {
+        HotelName = hotelName;
+    }
+    public String getItemName() {
+        return ItemName;
+    }
+    public void setItemName(String itemName) {
+        ItemName = itemName;
+    }
+    public String getPrice() {
+        return Price;
+    }
+    public void setPrice(String price) {
+        Price = price;
+    }
+    public Order(int orderId, String hotelName, String itemName, String price) {
+        OrderId = orderId;
+        HotelName = hotelName;
+        ItemName = itemName;
+        Price = price;
+    }
+    
+}
